@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layout')
 @section('content')
     <div id="wrapper">
         <div id="page" class="container">
@@ -37,10 +36,10 @@
                         You are logged in {{auth()->user()->name}} !
 
 
-                    You are logged in!
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
