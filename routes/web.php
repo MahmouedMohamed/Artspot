@@ -20,4 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Broadcast::routes();
+Route::get('/reports',function (){
+    return 'Secret Reports';
+    return view('/reports');
+})->middleware('can:view_reports');   ///if he can do that ability 'policy'!
