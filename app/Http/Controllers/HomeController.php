@@ -23,8 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home',[
-            'posts' => Post::latest()->get()
+        return view('home.home',[
+            'posts' => auth()->user()->timeline()
         ]);
     }
 }
