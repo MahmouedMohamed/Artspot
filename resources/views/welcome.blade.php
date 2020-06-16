@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('header')
     <div id="header-featured">
         <div id="banner-wrapper">

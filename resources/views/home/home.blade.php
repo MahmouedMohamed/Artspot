@@ -54,7 +54,7 @@
     <section class="px-8">
         <main class="container">
             <div class="d-flex justify-content-between">
-                <div id="PostsSection">
+                <div class="pt-5 pb-5">
                     <div id="form" class="border border-blue-400 rounded-lg lg:mx-10">
                         <div class="flipswitch">
                             <input type="checkbox" id="postType" name="flipswitch" class="flipswitch-cb" onchange="changeType()" checked>
@@ -76,7 +76,7 @@
                             <li><a href="profile/{{$user->id}}">
                                     <img id="avatar" src="{{$user->avatar()}}" class="rounded-full">
                                 </a>
-                                <a href="profile/{{$user->id}}"><span id="name">{{$user->name}}</span></a>
+                                <a href="profile/{{$user->id}}"><span>{{$user->name}}</span></a>
                             </li>
                         @endforeach
                     </ul>

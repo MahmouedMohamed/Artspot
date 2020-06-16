@@ -1,4 +1,4 @@
-@extends('layout')
+@ext@extends('layouts.layout')
 
 @section('content')
 <div class="container">

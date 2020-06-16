@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('header')
     <link href="\css\about.css" rel="stylesheet" type="text/css"/>
 @endsection
