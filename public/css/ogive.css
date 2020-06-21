@@ -274,7 +274,7 @@ span{
 }
 /*************** form section *********/
 #form{
-    width: 80%;
+    width: 100vh;
     max-width: 700px;
     margin-left: 10%;
     margin-right: 10%;

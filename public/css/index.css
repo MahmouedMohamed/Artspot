@@ -1,0 +1,114 @@
+body{
+    background: #2b2b2b url(../images/brush-painting-the-white-wall-6368.jpg) no-repeat center;
+    background-size: cover;
+    backdrop-filter:  blur(4px);
+}
+.fixed {
+    position: relative;
+}
+#nav-bar{
+    margin-bottom: 0px;
+}
+.carousel-item{
+    height: 100%;
+
+}
+.carousel-item  img{
+    position: absolute;
+    top: 5%;
+    left: auto;
+    right: 5%;
+    width: 75vh;
+    height: 75vh;
+}
+.carousel-item .words{
+    position: absolute;
+    top: 20%;
+    right: auto;
+    left: 10%;
+}
+.carousel-item .words h1{
+    background-color: purple;
+    /*background: -webkit-linear-gradient(#f7f7f7, #fff);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: lighter;
+    font-size: 100px;
+    font-family: Jokerman;
+}
+.carousel-item .words h2{
+    /*background-color: hotpink;*/
+    background-color: mediumpurple;
+    /*background: -webkit-linear-gradient(#171a1d, darkgrey);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 80px;
+    font-family: "Brush Script MT";
+}
+.btn{
+    border-radius: 50px;
+    /*padding: 5px 10px;*/
+    color: darkorange;
+    font-size: 17px;
+    font-weight: bold;
+    /*font-family: cursive;*/
+    box-shadow: transparent 0px 0px 20px 5px;
+    border: 3px solid gold;
+    background-color: transparent;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    transition: color 1s;
+    font-family: cursive;
+}
+.btn:hover{
+    background-color: transparent;
+    /*width: 100px;*/
+    border-color: deeppink;
+    color: orangered;
+}
+#carouselExampleIndicators{
+    height: calc(100% - 67px);
+}
+.carousel-inner> .carousel-item.carousel-item-next ,
+.carousel-inner > .carousel-item.active.carousel-item-right{
+    transform: translate3d(0, 100%, 0); -webkit-transform: translate3d(0, 100%, 0); -ms-transform: translate3d(0, 100%, 0); -moz-transform: translate3d(0, 100%, 0); -o-transform: translate3d(0, 100%, 0);  top: 0;
+
+}
+.carousel-inner > .carousel-item.carousel-item-prev ,
+.carousel-inner > .carousel-item.active.carousel-item-left{
+    transform: translate3d(0,-100%, 0); -webkit-transform: translate3d(0,-100%, 0);  -moz-transform: translate3d(0,-100%, 0);-ms-transform: translate3d(0,-100%, 0); -o-transform: translate3d(0,-100%, 0); top: 0;
+
+}
+.carousel-inner > .carousel-item.next.carousel-item-left ,
+.carousel-inner > .carousel-item.carousel-item-prev.carousel-item-right ,
+.carousel-inner > .carousel-item.active{
+    transform:translate3d(0,0,0); -webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);; -moz-transform:translate3d(0,0,0); -o-transform:translate3d(0,0,0); top:0;
+
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+/*------------------------------- vertical carousel indicators ------------------------------*/
+.carousel-indicators{
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+    height:20px;
+    right:auto; left:10px;
+    width:auto;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.carousel-indicators li{
+    display:block; margin-bottom:5px; border:1px solid grey;
+
+}
+.carousel-indicators li.active{
+    margin-bottom:5px; background:grey;
+}

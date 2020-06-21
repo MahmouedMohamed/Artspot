@@ -78,8 +78,8 @@
         <div id="menu">
             <ul>
                 @if(auth()->user())
-                    <li class="{{Request::is('/')? 'current_page_item' : ''}}" id="menuItem">
-                        <a href="/"><i id="icon"class="fa fa-home"></i></a>
+                    <li class="{{Request::is('/index')? 'current_page_item' : ''}}" id="menuItem">
+                        <a href="/index"><i id="icon"class="fa fa-home"></i></a>
                     </li>
                     <li class="{{Request::is('profile/'.auth()->user()->id)? 'current_page_item' : ''}}" id="menuItem">
                         <a href="/profile/{{auth()->user()->id}}"><i id="icon"class="fa fa-user"></i></a>

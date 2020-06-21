@@ -17,15 +17,12 @@ class PostsController extends Controller
     {
         return view('posts.show',['post'=>$post]);
     }
-    public function create(){
-        return view('posts.create');
-    }
     public function store(){
         $this->validatePost();
         $post = new Post(request(['body']));
         $post->user_id = auth()->user()->id;
         $post->save();
-        return redirect('/');
+        return redirect(route('home'));
     }
     public function edit(Post $post){
         $this->authorize('update',$post);
@@ -43,7 +40,7 @@ class PostsController extends Controller
     public function destroy(Post $post){
         $this->authorize('delete',$post);
         $post->delete();
-        return redirect('/');
+        return redirect(route('home'));
     }
     public function filterBy(){
 //        return Article::all()->filter(function ($article){return $article->user_id == 1;});
