@@ -1,8 +1,12 @@
  @forelse($posts as $post)
-        <div id="post">
+        <div id="post"
+             style="
+{{$loop->first?'border-top-left-radius: 10px;border-top-right-radius:10px' : ''}}
+             {{$loop->last?'border-bottom-left-radius: 10px;border-bottom-right-radius:10px;margin-bottom:10px' : ''}}
+                ">
             <ul>
                 <li><a href="profile/{{$post->author->id}}"> <img id="avatar"
-                                                                  src="{{$post->author->avatar()}}"
+                                                                  src="{{$post->author->profile->profilePic()}}"
                                                                   class="rounded-full"></a>
 
                     <span><a href="profile/{{$post->author->id}}">{{$post->author->name }}</a></span>

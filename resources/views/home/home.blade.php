@@ -72,13 +72,15 @@
                 <div id="friendsSection">
                     <h3>Following</h3>
                     <ul style="list-style: none;padding-left: 5px;padding-right: 10px">
-                        @foreach(auth()->user()->follows as $user)
+                        @forelse(auth()->user()->follows as $user)
                             <li><a href="profile/{{$user->id}}">
-                                    <img id="avatar" src="{{$user->avatar()}}" class="rounded-full">
+                                    <img id="avatar" src="{{$user->profile->profilePic()}}" class="rounded-full">
                                 </a>
                                 <a href="profile/{{$user->id}}"><span>{{$user->name}}</span></a>
                             </li>
-                        @endforeach
+                        @empty
+                            You follow no one!
+                        @endforelse
                     </ul>
                 </div>
 

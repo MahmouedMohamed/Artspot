@@ -18,22 +18,25 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/contact','ContactController@index');
-Route::post('/contact','ContactController@complain');
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/posts','PostsController@index')->name('posts.index');
+Route::get('/',function(){return View('home.index');});
+Route::get('/index', 'HomeController@index')->name('home');
+Auth::routes();
+Auth::routes(['verify' => true]);
+Route::get('/profile/{user}','ProfilesController@show');
+Route::post('/profile/{user}/follow','FollowsController@store');
+Route::get('/profile/{user}/edit','ProfilesController@edit');
+Route::patch('/profile/{user}/edit','ProfilesController@update');
+//Route::get('/posts','PostsController@index');
+//Route::get('/posts/create','PostsController@create');
 Route::post('/posts','PostsController@store');
-Route::get('/posts/create','PostsController@create');
 Route::get('/posts/{post}','PostsController@show')->name('posts.show');
 Route::get('/posts/{post}/edit','PostsController@edit');
 Route::put('/posts/{post}','PostsController@update');
 Route::delete('/posts/{post}','PostsController@destroy');
+
 Route::get('/notification','UserNotificationController@show');
 Route::get('/notification/readAll','UserNotificationController@read');
+
 Route::get('/likePost/{post}','LikesController@likePost');
 
 Auth::routes();
