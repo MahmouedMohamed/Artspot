@@ -30,7 +30,7 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
-        //
+        //it depends on public/private which isn't yet implemented.
     }
 
     /**
@@ -41,7 +41,7 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -65,7 +65,7 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        //
+        return $post->author->is($user);
     }
 
     /**
@@ -89,7 +89,9 @@ class PostPolicy
      */
     public function report(User $user, Post $post)
     {
-        return true;
+        return
+        $this->view($user,$post)?   ////user can report only what he can see.
+             true : false;
     }
     /**
      * Determine whether the user can permanently delete the model.
